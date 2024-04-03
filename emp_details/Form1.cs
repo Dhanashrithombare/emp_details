@@ -35,11 +35,65 @@ namespace emp_details
 
         private void btninsert_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("");
-            con.Open();
-            SqlConnection Command = new SqlCommand("insert into employee_detail values("+int.Parse(txtempid.text)+"','" int.Parse(txtname.text)'"')");
-            MessageBox.Show("Successfully Inserted");
-            con.Close();
+            int empid = int.Parse(txtempid.Text);
+            string empname = txtname.Text;
+            string PAN = txtpan.Text;
+            string address = txtadd.Text;
+            string email = txtemailid.Text;
+            int contact = int.Parse(txtcontact.Text);
+            SqlConnection con;
+            try
+            {
+                con = new SqlConnection("Data Source=.\\sqlexpress;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+                con.Open();
+                string qry = "insert into employee_detail values(" + empid + ",'" + empname + "','" + PAN + "','" + address + "','" + email + "'," + contact + ")";
+
+                SqlCommand Command = new SqlCommand(qry,con);
+                int n=Command.ExecuteNonQuery();
+                if (n > 0)
+                {
+                    MessageBox.Show("Successfully Inserted.........");
+                }
+                else
+                {
+                    MessageBox.Show("Not Inserted!!!!!!!!");
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                 MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            int empid = int.Parse(txtempid.Text);
+            
+            SqlConnection con;
+            try
+            {
+                con = new SqlConnection("Data Source=.\\sqlexpress;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+                con.Open();
+                string qry = "delete from employee_detail where emp_id="+empid;
+
+                SqlCommand Command = new SqlCommand(qry, con);
+                int n = Command.ExecuteNonQuery();
+                if (n > 0)
+                {
+                    MessageBox.Show("Successfully Deleted.........");
+                }
+                else
+                {
+                    MessageBox.Show("Not Deleted!!!!!!!!");
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
