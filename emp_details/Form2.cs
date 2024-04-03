@@ -11,26 +11,11 @@ using System.Windows.Forms;
 
 namespace emp_details
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
-        }
-
-        private void lblpan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btninsert_Click(object sender, EventArgs e)
@@ -43,13 +28,13 @@ namespace emp_details
             int contact = int.Parse(txtcontact.Text);
             SqlConnection con;
             try
-            {
+            {// update connection string as per your database
                 con = new SqlConnection("Data Source=.\\sqlexpress;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
                 con.Open();
                 string qry = "insert into employee_detail values(" + empid + ",'" + empname + "','" + PAN + "','" + address + "','" + email + "'," + contact + ")";
 
-                SqlCommand Command = new SqlCommand(qry,con);
-                int n=Command.ExecuteNonQuery();
+                SqlCommand Command = new SqlCommand(qry, con);
+                int n = Command.ExecuteNonQuery();
                 if (n > 0)
                 {
                     MessageBox.Show("Successfully Inserted.........");
@@ -62,21 +47,22 @@ namespace emp_details
             }
             catch (Exception ex)
             {
-                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
-            
+
         }
 
         private void btndelete_Click(object sender, EventArgs e)
         {
             int empid = int.Parse(txtempid.Text);
-            
+
             SqlConnection con;
             try
             {
+                // update connection string as per your database
                 con = new SqlConnection("Data Source=.\\sqlexpress;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
                 con.Open();
-                string qry = "delete from employee_detail where emp_id="+empid;
+                string qry = "delete from employee_detail where emp_id=" + empid;
 
                 SqlCommand Command = new SqlCommand(qry, con);
                 int n = Command.ExecuteNonQuery();
@@ -94,71 +80,6 @@ namespace emp_details
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void btnsearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnupdate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblhead_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtadd_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtcontact_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtemailid_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtempid_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblcontact_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblemailid_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbladd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblempname_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblempid_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -57,6 +57,7 @@
             this.lblempid.Size = new System.Drawing.Size(64, 18);
             this.lblempid.TabIndex = 0;
             this.lblempid.Text = "Emp_Id";
+            this.lblempid.Click += new System.EventHandler(this.lblempid_Click);
             // 
             // lblempname
             // 
@@ -68,6 +69,7 @@
             this.lblempname.Size = new System.Drawing.Size(52, 18);
             this.lblempname.TabIndex = 1;
             this.lblempname.Text = "Name";
+            this.lblempname.Click += new System.EventHandler(this.lblempname_Click);
             // 
             // lblpan
             // 
@@ -91,6 +93,7 @@
             this.lbladd.Size = new System.Drawing.Size(69, 18);
             this.lbladd.TabIndex = 3;
             this.lbladd.Text = "Address";
+            this.lbladd.Click += new System.EventHandler(this.lbladd_Click);
             // 
             // lblemailid
             // 
@@ -102,6 +105,7 @@
             this.lblemailid.Size = new System.Drawing.Size(68, 18);
             this.lblemailid.TabIndex = 4;
             this.lblemailid.Text = "Emai_Id";
+            this.lblemailid.Click += new System.EventHandler(this.lblemailid_Click);
             // 
             // lblcontact
             // 
@@ -113,6 +117,7 @@
             this.lblcontact.Size = new System.Drawing.Size(98, 18);
             this.lblcontact.TabIndex = 5;
             this.lblcontact.Text = "Contact_No";
+            this.lblcontact.Click += new System.EventHandler(this.lblcontact_Click);
             // 
             // txtempid
             // 
@@ -122,6 +127,7 @@
             this.txtempid.Name = "txtempid";
             this.txtempid.Size = new System.Drawing.Size(121, 24);
             this.txtempid.TabIndex = 6;
+            this.txtempid.TextChanged += new System.EventHandler(this.txtempid_TextChanged);
             // 
             // txtname
             // 
@@ -131,6 +137,7 @@
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(139, 24);
             this.txtname.TabIndex = 7;
+            this.txtname.TextChanged += new System.EventHandler(this.txtname_TextChanged);
             // 
             // txtpan
             // 
@@ -150,6 +157,7 @@
             this.txtemailid.Name = "txtemailid";
             this.txtemailid.Size = new System.Drawing.Size(162, 24);
             this.txtemailid.TabIndex = 9;
+            this.txtemailid.TextChanged += new System.EventHandler(this.txtemailid_TextChanged);
             // 
             // txtcontact
             // 
@@ -159,6 +167,7 @@
             this.txtcontact.Name = "txtcontact";
             this.txtcontact.Size = new System.Drawing.Size(162, 24);
             this.txtcontact.TabIndex = 10;
+            this.txtcontact.TextChanged += new System.EventHandler(this.txtcontact_TextChanged);
             // 
             // txtadd
             // 
@@ -168,6 +177,7 @@
             this.txtadd.Name = "txtadd";
             this.txtadd.Size = new System.Drawing.Size(162, 24);
             this.txtadd.TabIndex = 11;
+            this.txtadd.TextChanged += new System.EventHandler(this.txtadd_TextChanged);
             // 
             // btninsert
             // 
@@ -191,6 +201,7 @@
             this.btnupdate.TabIndex = 13;
             this.btnupdate.Text = "UPDATE";
             this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btndelete
             // 
@@ -214,6 +225,7 @@
             this.btnsearch.TabIndex = 15;
             this.btnsearch.Text = "SEARCH";
             this.btnsearch.UseVisualStyleBackColor = true;
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
             // lblhead
             // 
@@ -225,6 +237,7 @@
             this.lblhead.Size = new System.Drawing.Size(170, 18);
             this.lblhead.TabIndex = 17;
             this.lblhead.Text = "EMPLOYEE DETAILS";
+            this.lblhead.Click += new System.EventHandler(this.lblhead_Click);
             // 
             // Form1
             // 
