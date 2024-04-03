@@ -115,6 +115,7 @@
             this.txtempid.Name = "txtempid";
             this.txtempid.Size = new System.Drawing.Size(160, 28);
             this.txtempid.TabIndex = 6;
+            this.txtempid.Text = "1";
             // 
             // txtname
             // 

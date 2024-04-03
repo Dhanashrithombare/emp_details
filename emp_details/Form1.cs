@@ -35,11 +35,49 @@ namespace emp_details
 
         private void btninsert_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("");
+            int empid = int.Parse(txtempid.Text);
+            string name = txtname.Text;
+            string pan = txtpan.Text;
+            string address = txtadd.Text;
+            string email = txtemailid.Text;
+            int contact = int.Parse(txtcontact.Text);
+
+          
+            SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=master;Integrated Security=True;TrustServerCertificate=True");
+            try
+            {
+              
             con.Open();
-            SqlConnection Command = new SqlCommand("insert into employee_detail values("+int.Parse(txtempid.text)+"','" int.Parse(txtname.text)'"')");
-            MessageBox.Show("Successfully Inserted");
-            con.Close();
+
+            
+            SqlCommand cmd = new SqlCommand();
+
+            String qry = "insert into emp_details values(" + empid + ",'" + name + "','" + pan + "','" + address + "','" + email + "'," + contact + ")";
+            cmd.Connection = con;
+            cmd.CommandText = qry;
+            cmd.CommandType = CommandType.Text;
+
+            int n = cmd.ExecuteNonQuery();
+            if (n > 0)
+            {
+                MessageBox.Show("Record inserted successfully....");
+            }
+            else
+            {
+                MessageBox.Show("Record NOT inserted .....");
+            }
+        }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Exception :" + ex.Message);
+            }
+            finally
+            {
+                
+                con.Close();
+            }
+
+
         }
     }
 }
